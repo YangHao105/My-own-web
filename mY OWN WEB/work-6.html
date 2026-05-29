@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活动海报设计 - 设计师个人网站</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .detail-section {
+            padding: 120px 2rem 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 4rem;
+        }
+
+        .detail-image {
+            position: fixed;
+            left: 5%;
+            width: calc(45% - 2rem);
+            top: 120px;
+            bottom: 40px;
+            overflow-y: auto;
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+        }
+
+        .detail-content-wrapper {
+            width: calc(55% - 2rem);
+            margin-left: calc(45% + 2rem);
+        }
+
+        .detail-content {
+            padding: 2rem;
+        }
+
+        .detail-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .detail-category {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .detail-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .detail-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-light);
+        }
+
+        @media (max-width: 1024px) {
+            .detail-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .detail-image {
+                position: static;
+            }
+
+            .detail-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .detail-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Designer</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="works.html">个人作品</a></li>
+                <li><a href="resume.html">个人履历</a></li>
+                <li><a href="contact.html">联系方式</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <img src="images/moon.svg" alt="切换到深色模式" id="themeIcon">
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="detail-section">
+        <div class="detail-image">
+            <img src="neirong-6.jpg" alt="活动海报设计">
+        </div>
+        
+        <div class="detail-content-wrapper">
+            <div class="detail-content glass-card">
+            <a href="javascript:history.back()" class="back-link">
+                <i class="fas fa-arrow-left"></i> 返回作品列表
+            </a>
+            
+            <h1 class="detail-title">活动海报设计</h1>
+            <span class="detail-category">海报设计</span>
+            
+            <h2 class="detail-section-title">作品背景</h2>
+            <p>大型线下活动宣传海报，吸引眼球的视觉设计。</p>
+            
+            <h2 class="detail-section-title">作品分类</h2>
+            <p>海报设计 / 活动宣传 / 平面设计</p>
+            
+            <h2 class="detail-section-title">设计思路</h2>
+            <p>采用大胆的视觉冲击手法，色彩对比强烈。版式设计富有动感，文字与图形相互呼应。通过层次分明的布局引导观众视线，有效传达活动主题和核心信息。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#" aria-label="微信"><i class="fab fa-weixin"></i></a>
+            <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+            <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+        </div>
+        <p>&copy; 2024 Designer. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
