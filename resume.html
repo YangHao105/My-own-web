@@ -3,9 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>设计师个人网站 - 个人履历</title>
+    <title>杨浩 - 个人履历</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .resume-section {
+            padding: 120px 2rem 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .resume-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+        }
+
+        .resume-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .resume-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 968px) {
+            .resume-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .profile-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(99, 102, 241, 0.1));
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-card h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-color), #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-card p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .info-item i {
+            color: var(--primary-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+        }
+
+        .skill-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .skill-card h3 i {
+            font-size: 1.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(99, 102, 241, 0.1));
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .software-card {
+            padding: 1.5rem;
+        }
+
+        .software-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .software-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(99, 102, 241, 0.05));
+            padding: 1rem 1.2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .software-item:hover {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(99, 102, 241, 0.1));
+        }
+
+        .software-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .software-name {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .ai-card {
+            padding: 1.5rem;
+        }
+
+        .ai-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .ai-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(99, 102, 241, 0.05));
+            padding: 1rem 1.2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        .ai-item:hover {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(99, 102, 241, 0.1));
+        }
+
+        .ai-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-name {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .about-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .about-card p {
+            line-height: 1.9;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-text {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .resume-section {
+                padding: 100px 1rem 40px;
+            }
+
+            .profile-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .profile-card h1 {
+                font-size: 2rem;
+            }
+
+            .profile-info {
+                gap: 1rem;
+            }
+
+            .skill-card, .about-card {
+                padding: 1.5rem;
+            }
+
+            .software-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -29,63 +288,128 @@
     </nav>
 
     <section class="resume-section">
-        <div class="resume-card glass-card">
-            <div class="resume-header">
-                <h1>个人履历</h1>
-                <p>十年设计经验，专注于品牌设计与用户体验</p>
+        <div class="profile-card glass-card" style="margin-bottom: 2rem;">
+            <h1>杨浩</h1>
+            <p>视觉设计师 | AIGC 创意创作者</p>
+            <div class="profile-info">
+                <span class="info-item"><i class="fas fa-map-marker-alt"></i> 辽宁大连</span>
+                <span class="info-item"><i class="fas fa-birthday-cake"></i> 2001.11.21</span>
+                <span class="info-item"><i class="fas fa-palette"></i> 视觉设计领域</span>
             </div>
-            
-            <div class="resume-content">
-                <div class="sidebar">
-                    <h3>基本信息</h3>
-                    <ul>
-                        <li><strong>姓名：</strong>张设计师</li>
-                        <li><strong>年龄：</strong>32岁</li>
-                        <li><strong>学历：</strong>本科</li>
-                        <li><strong>专业：</strong>视觉传达设计</li>
-                        <li><strong>所在地：</strong>北京</li>
-                    </ul>
-                    
-                    <h3>专业技能</h3>
-                    <ul>
-                        <li>品牌设计</li>
-                        <li>UI/UX设计</li>
-                        <li>平面设计</li>
-                        <li>插画设计</li>
-                        <li>包装设计</li>
-                    </ul>
-                    
-                    <h3>软件技能</h3>
-                    <ul>
-                        <li>Adobe Photoshop</li>
-                        <li>Adobe Illustrator</li>
-                        <li>Figma</li>
-                    </ul>
+        </div>
+
+        <div class="resume-layout">
+            <div class="resume-left">
+                <div class="about-card">
+                    <h2><i class="fas fa-user"></i> 个人简介</h2>
+                    <p>深耕视觉设计领域，具备多元设计实操能力。熟练完成 <span class="highlight-text">APP 界面</span>、<span class="highlight-text">企业官网</span>、<span class="highlight-text">H5 长图</span> 等常规视觉设计工作，擅长把控版式美学与用户视觉体验。</p>
+                    <p>同时掌握 <span class="highlight-text">AIGC 创意创作</span>、<span class="highlight-text">AI 影视制作</span> 技能，可借助智能工具高效产出创意画面、动态影像内容。兼顾传统设计功底与前沿 AI 创作能力，适配多品类视觉项目需求。</p>
+                    <p>做事严谨高效，善于融合创意与实用落地，期待投身设计岗位发挥自身价值。</p>
                 </div>
-                
-                <div class="main-content">
-                    <div class="timeline-item glass-card">
-                        <h4>资深设计师</h4>
-                        <span class="date">2020 - 至今</span>
-                        <p>某知名设计公司 | 负责品牌设计、UI设计项目，带领团队完成多个大型项目，获得客户高度认可。</p>
+            </div>
+
+            <div class="resume-right">
+                <div class="skills-grid" style="margin-bottom: 0;">
+                    <div class="skill-card ai-card">
+                        <h3><i class="fas fa-laptop"></i> 传统设计技能</h3>
+                        <div class="ai-grid">
+                            <div class="ai-item">
+                                <span class="ai-name">APP 界面设计</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">企业官网设计</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">H5 长图设计</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">版式设计</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">用户体验设计</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">品牌视觉设计</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="timeline-item glass-card">
-                        <h4>高级设计师</h4>
-                        <span class="date">2016 - 2020</span>
-                        <p>某互联网公司 | 负责产品界面设计，优化用户体验，参与多款产品从0到1的设计过程。</p>
+
+                    <div class="skill-card ai-card">
+                        <h3><i class="fas fa-brain"></i> AI 创作技能</h3>
+                        <div class="ai-grid">
+                            <div class="ai-item">
+                                <span class="ai-name">AIGC 创意创作</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">AI 影视制作</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">AI 图像生成</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">智能设计辅助</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">动态影像创作</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">创意内容生成</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="timeline-item glass-card">
-                        <h4>设计师</h4>
-                        <span class="date">2014 - 2016</span>
-                        <p>某广告公司 | 负责平面设计、海报设计、活动宣传物料等设计工作。</p>
+
+                    <div class="skill-card software-card">
+                        <h3><i class="fas fa-tools"></i> 软件工具</h3>
+                        <div class="software-grid">
+                            <div class="software-item">
+                                <img src="images/PSLOGO.webp" alt="Adobe Photoshop" class="software-icon">
+                                <span class="software-name">Adobe Photoshop</span>
+                            </div>
+                            <div class="software-item">
+                                <img src="images/illustratorLOGO.webp" alt="Adobe Illustrator" class="software-icon">
+                                <span class="software-name">Adobe Illustrator</span>
+                            </div>
+                            <div class="software-item">
+                                <img src="images/figmaLOGO.webp" alt="Figma" class="software-icon">
+                                <span class="software-name">Figma</span>
+                            </div>
+                            <div class="software-item">
+                                <img src="images/AILOGO.jpg" alt="AI应用能力" class="software-icon">
+                                <span class="software-name">AI应用能力</span>
+                            </div>
+                            <div class="software-item">
+                                <img src="images/videoLOGO.jpg" alt="影视制作" class="software-icon">
+                                <span class="software-name">影视制作</span>
+                            </div>
+                            <div class="software-item">
+                                <img src="https://neeko-copilot.bytedance.net/api/text_to_image?prompt=Runway%20ML%20AI%20software%20icon%20logo%20blue%20green%20gradient%20simple%20modern&image_size=square" alt="Runway ML" class="software-icon">
+                                <span class="software-name">Runway ML</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="timeline-item glass-card">
-                        <h4>视觉传达设计</h4>
-                        <span class="date">2010 - 2014</span>
-                        <p>某大学 | 本科毕业，主修视觉传达设计专业，获得优秀毕业生称号。</p>
+
+                    <div class="skill-card ai-card">
+                        <h3><i class="fas fa-award"></i> 职业优势</h3>
+                        <div class="ai-grid">
+                            <div class="ai-item">
+                                <span class="ai-name">严谨高效</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">创意落地</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">多元适配</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">持续学习</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">团队协作</span>
+                            </div>
+                            <div class="ai-item">
+                                <span class="ai-name">项目管理</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,7 +423,7 @@
             <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
             <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
         </div>
-        <p>© 2024 Designer. All rights reserved.</p>
+        <p>© 2024 杨浩. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
