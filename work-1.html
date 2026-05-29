@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当海面迎来汹涌的潮汐 - 视频作品</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .detail-section {
+            padding: 120px 2rem 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 4rem;
+        }
+
+        .detail-image {
+            position: fixed;
+            left: 5%;
+            width: calc(45% - 2rem);
+            top: 120px;
+            bottom: 40px;
+            overflow-y: auto;
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+        }
+
+        .detail-content-wrapper {
+            width: calc(55% - 2rem);
+            margin-left: calc(45% + 2rem);
+        }
+
+        .detail-content {
+            padding: 2rem;
+        }
+
+        .detail-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .detail-category {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .detail-section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .detail-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-light);
+        }
+
+        @media (max-width: 1024px) {
+            .detail-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .detail-image {
+                position: static;
+            }
+
+            .detail-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .detail-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Designer</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="works.html">个人作品</a></li>
+                <li><a href="resume.html">个人履历</a></li>
+                <li><a href="contact.html">联系方式</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+                    <img src="images/moon.svg" alt="切换到深色模式" id="themeIcon">
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="detail-section">
+        <div class="detail-image">
+            <img src="neirong-1.jpg" alt="视频制作作品" class="work-image">
+        </div>
+        
+        <div class="detail-content-wrapper">
+            <div class="detail-content glass-card">
+            <a href="javascript:history.back()" class="back-link">
+                <i class="fas fa-arrow-left"></i> 返回作品列表
+            </a>
+            
+            <h1 class="detail-title">当海面迎来汹涌的潮汐</h1>
+            <span class="detail-category">视频剪辑</span>
+            
+            <h2 class="detail-section-title">作品背景</h2>
+            <p>这是一部富有诗意的视频作品，通过画面与音乐的完美结合，讲述了一个关于追寻、回忆与成长的故事。视频以"当海面迎来汹涌的潮汐，我奔跑寻找昔日的足迹"为主题，展现了人与自然、过去与现在的深刻连接。</p>
+            
+            <h2 class="detail-section-title">作品分类</h2>
+            <p>视频剪辑 / 创意视频 / 情感短片</p>
+            
+            <h2 class="detail-section-title">设计思路</h2>
+            <p>视频采用电影级调色风格，通过冷暖色调的对比来表现情感的起伏。镜头语言注重节奏与韵律，配合音乐的旋律推进叙事。画面构图讲究对称与平衡，每一帧都经过精心设计。剪辑手法灵活多变，从慢镜头到快速剪辑，营造出丰富的视觉层次和情感张力。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#" aria-label="微信"><i class="fab fa-weixin"></i></a>
+            <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+            <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+        </div>
+        <p>&copy; 2024 Designer. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
